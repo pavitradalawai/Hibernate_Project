@@ -1,0 +1,57 @@
+configuration:
+1. Configuration  configure();
+2.Configuration   addClass(Class persistentClass);
+3.SessionFactory   bluidSessionFactory();
+
+SessionFactory:
+
+  1.Session openSession();
+ 2.boolean   isClosed();
+
+Session:
+
+1.Transaction  beginTransaction();
+2.Transaction getTransaction();
+3.void close();
+4.Query createQuery(String queryString);
+
+Createcriteria methods:  Criteria createCriteria(Class persistentClass);
+     Criteria createCriteria(Class persistentClass,String alias); 
+ 	 Criteria createCriteria(String entityName);
+	 Criteria createCriteria(String entityName,String alias);       
+	 	
+   
+Save method:
+1.Serializable save(Object object);
+2. Serializable save(String entityName, Object object);
+
+update method:
+
+1.void update(Object object);
+2.void update(String entityName, Object object);
+
+Delete method:
+1.void delete(Object obj); 2.void delete(String entityName,Object obj);
+
+get method:
+ 1.Object get(String entityName, Serializable id);
+ 2.Object get(String entityName, Serializable id, LockMode lockMode);
+3. Object get(String entityName, Serializable id, LockOptions lockOptions);
+  
+query:
+ 1.NativeQuery  createSQLQuery(String queryString);
+
+
+load methods:<T>T  load(Class<T> theClass, Serializable id);
+
+	1. void load(Object object, Serializable id);
+	2. Object load(String entityName, Serializable id);
+	3. Object load(String entityName, Serializable id, LockMode lockMode);
+	4.Object load(String entityName, Serializable id, LockOptions lockOptions);
+	
+
+
+Transaction
+1. void commit();
+2. void rollback();
+  
